@@ -8,13 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        if let navBar = self.navigationController as? MainNavigation {
+            self.navigationItem.titleView                 = navBar.largeTitle()
+            self.navigationItem.titleView?.clipsToBounds  = true
+            self.navigationItem.rightBarButtonItem        = navBar.automallControlsItem()
+            self.navigationItem.backBarButtonItem         = navBar.backButton()
+        }
     }
-
-
+    
+    @IBAction func nextController(_ sender: UIButton) {
+        let secondController = SecondController()
+        secondController.view.backgroundColor = .red
+        self.navigationController?.pushViewController(secondController, animated: true)
+    }
 }
-
