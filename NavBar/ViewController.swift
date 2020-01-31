@@ -13,9 +13,14 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        self.title = "Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр "
+        
         if let navBar = self.navigationController as? MainNavigation {
-            self.navigationItem.titleView                 = navBar.largeTitle()
-            self.navigationItem.titleView?.clipsToBounds  = true
+            
+//            navBar.navigationItem.largeTitleDisplayMode = .always
+            
+            self.navigationItem.titleView = navBar.setTitle(title: "Title", subtitle: "SubTitle")
+            self.navigationItem.titleView?.frame.size.height = 100
             self.navigationItem.rightBarButtonItem        = navBar.automallControlsItem()
             self.navigationItem.backBarButtonItem         = navBar.backButton()
         }
