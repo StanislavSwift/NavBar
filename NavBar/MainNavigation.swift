@@ -6,6 +6,36 @@
 //  Copyright © 2020 Stanislav. All rights reserved.
 //
 
+
+/*
+ 
+ https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898
+
+ https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898
+ https://medium.com/@matschmidy/swift-custom-navigation-bar-image-for-ios-11-large-titles-8a176d9cbaed
+
+ https://stackoverflow.com/questions/30993386/ios-rightbarbuttonitem-on-uinavigationcontroller-in-swift
+ https://stackoverflow.com/questions/32553197/show-hide-barbuttonitem
+ https://stackoverflow.com/questions/30022780/uibarbuttonitem-in-navigation-bar-programmatically
+ https://stackoverflow.com/questions/37552876/swift-custom-navbar-back-button-image-and-text
+ https://stackoverflow.com/questions/46193204/custom-back-indicator-image-and-ios-11
+ https://stackoverflow.com/questions/24769770/swift-setting-back-button-image-in-nav-bar/44970293#44970293
+ https://medium.com/simple-swift-programming-tips/how-to-make-custom-uinavigationcontroller-back-button-image-without-title-swift-7ea5673d7e03
+ https://stackoverflow.com/questions/43383493/swift-3-add-navigation-items-to-uinavigationcontroller-subclass
+ https://stackoverflow.com/questions/28356333/navigation-bar-contents-not-showing
+ https://medium.com/simple-swift-programming-tips/how-to-make-custom-uinavigationcontroller-back-button-image-without-title-swift-7ea5673d7e03
+ https://developer.apple.com/documentation/uikit/uinavigationcontroller
+ https://developer.apple.com/documentation/uikit/uinavigationitem/1624958-backbarbuttonitem
+ https://www.codesd.com/item/swift-3-add-navigation-articles-to-subclass-uinavigationcontroller.html
+ https://swiftwithmajid.com/2019/02/20/navigation-with-flow-controllers/
+ https://stackoverflow.com/questions/45069477/swift-3-0-adding-a-right-button-to-navigation-bar
+ https://stackoverflow.com/questions/28471164/how-to-set-back-button-text-in-swift
+ https://stackoverflow.com/questions/24687238/changing-navigation-bar-color-in-swift
+
+ https://github.com/alex-lenk/icie/tree/master/src/fonts
+ 
+ */
+
 import UIKit
 
 final class MainNavigation: UINavigationController {
