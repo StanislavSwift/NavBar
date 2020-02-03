@@ -13,14 +13,21 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.title = "Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр "
+
+        
+        self.title = "Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр Фильтр "
         
         if let navBar = self.navigationController as? MainNavigation {
             
 //            navBar.navigationItem.largeTitleDisplayMode = .always
+            let testView = UIView()
+            testView.backgroundColor = .yellow
+            testView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100)
             
-            self.navigationItem.titleView = navBar.setTitle(title: "Title", subtitle: "SubTitle")
-            self.navigationItem.titleView?.frame.size.height = 100
+            self.navigationItem.titleView = testView
+            self.navigationItem.accessibilityFrame = CGRect(x: 0, y: 200, width: 0, height: 0)
+//            self.navigationItem.titleView?.frame.size.height = 100
+            
             self.navigationItem.rightBarButtonItem        = navBar.automallControlsItem()
             self.navigationItem.backBarButtonItem         = navBar.backButton()
         }

@@ -38,6 +38,9 @@
 
 import UIKit
 
+
+
+
 final class MainNavigation: UINavigationController {
     
     enum TextStrings {
@@ -54,14 +57,47 @@ final class MainNavigation: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.isTranslucent = true
+//        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        self.navigationBar.shadowImage = UIImage()
+//        self.navigationBar.isTranslucent = false
         
-        self.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationBar.prefersLargeTitles = false
+        self.navigationItem.largeTitleDisplayMode = .never
         
         self.navigationBar.backgroundColor = .green
+        
+        self.navigationBar.layoutMargins.left = 20
+        
+        self.navigationBar.layoutMargins.right = 20
+        self.navigationBar.backgroundColor = .red
+        
+        let testView = UIView()
+        testView.backgroundColor = .green
+        testView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        
+        self.setupAdditionalView(testView)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let height = CGFloat(200)
+        let originalBarFrame = navigationBar.frame
+        navigationBar.frame = CGRect(x: originalBarFrame.minX,
+                                     y: originalBarFrame.minY,
+                                     width: originalBarFrame.width,
+                                     height: 0)
+    }
+    
+    func setupAdditionalView(_ additionalView: UIView) {
+        self.navigationBar.frame.size.height = 0.0
+        self.navigationBar.addSubview(additionalView)
+        additionalView.translatesAutoresizingMaskIntoConstraints = false
+        additionalView.topAnchor.constraint(equalTo: self.navigationBar.bottomAnchor).isActive = true
+        additionalView.leftAnchor.constraint(equalTo: self.navigationBar.leftAnchor).isActive = true
+        additionalView.widthAnchor.constraint(equalTo: self.navigationBar.widthAnchor).isActive = true
+        additionalView.heightAnchor
+            .constraint(equalToConstant: additionalView.frame.height)
+            .isActive = true
     }
 }
 
