@@ -10,10 +10,10 @@
 /*
  
  https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898
-
+ 
  https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898
  https://medium.com/@matschmidy/swift-custom-navigation-bar-image-for-ios-11-large-titles-8a176d9cbaed
-
+ 
  https://stackoverflow.com/questions/30993386/ios-rightbarbuttonitem-on-uinavigationcontroller-in-swift
  https://stackoverflow.com/questions/32553197/show-hide-barbuttonitem
  https://stackoverflow.com/questions/30022780/uibarbuttonitem-in-navigation-bar-programmatically
@@ -31,12 +31,21 @@
  https://stackoverflow.com/questions/45069477/swift-3-0-adding-a-right-button-to-navigation-bar
  https://stackoverflow.com/questions/28471164/how-to-set-back-button-text-in-swift
  https://stackoverflow.com/questions/24687238/changing-navigation-bar-color-in-swift
-
+ 
  https://github.com/alex-lenk/icie/tree/master/src/fonts
  
+ How to hide the navigation bar and toolbar as scroll down? Swift (like myBridge app)
+ https://stackoverflow.com/questions/40667985/how-to-hide-the-navigation-bar-and-toolbar-as-scroll-down-swift-like-mybridge
+ 
+https://github.com/tristanhimmelman/HidingNavigationBar
  */
 
 import UIKit
+
+enum NavigationBarHeightType: CGFloat {
+    case autoMall   = 200
+    case zero       = 0
+}
 
 final class MainNavigation: UINavigationController {
     
@@ -54,14 +63,29 @@ final class MainNavigation: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.isTranslucent = true
+        self.navigationBar.backgroundColor = .red
         
-        self.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .always
+        let testView = UIView(frame: CGRect(x: navigationBar.frame.minX, y: navigationBar.frame.minY, width: self.navigationBar.frame.width, height: NavigationBarHeightType.autoMall.rawValue))
+        testView.backgroundColor = .green
         
-        self.navigationBar.backgroundColor = .green
+        self.navigationBar.addSubview(testView)
+        
+        if let visibleController = self.viewControllers.last {
+            visibleController.additionalSafeAreaInsets.top = NavigationBarHeightType.autoMall.rawValue - UIApplication.shared.statusBarFrame.height
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let previouslyFrame = navigationBar.frame
+        
+        let height = CGFloat(0)
+        navigationBar.frame = CGRect(x: previouslyFrame.minX, y: previouslyFrame.minY, width: view.frame.width, height: height)
+    }
+    
+    func customNavigationBar(height: NavigationBarHeightType) {
+        
     }
 }
 
@@ -69,56 +93,56 @@ extension MainNavigation {
     
     func setTitle(title:String, subtitle:String) -> UIView {
         
-            let titleLabel = UILabel(frame: CGRect(x:0, y:0, width:0, height:0))
-            
-            titleLabel.backgroundColor = UIColor.clear
-            titleLabel.textColor = UIColor.gray
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 27)
-            titleLabel.text = title
-            titleLabel.sizeToFit()
-            
-            let subtitleLabel = UILabel(frame: CGRect(x:0, y:20, width:0, height:0))
-            subtitleLabel.backgroundColor = UIColor.clear
-            subtitleLabel.textColor = UIColor.black
-            subtitleLabel.font = UIFont.systemFont(ofSize: 12)
-            subtitleLabel.text = subtitle
-            subtitleLabel.sizeToFit()
-            
-            let titleView = UIView(frame: CGRect(x:0, y:0, width:max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height:200))
-            titleView.addSubview(titleLabel)
-            titleView.addSubview(subtitleLabel)
-            
-//            let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
-//
-//            if widthDiff > 0 {
-//                var frame = titleLabel.frame
-//                frame.origin.x = widthDiff / 2
-//                titleLabel.frame = frame.integral
-//            } else {
-//                var frame = subtitleLabel.frame
-//                frame.origin.x = abs(widthDiff) / 2
-//                titleLabel.frame = frame.integral
-//            }
-            
+        let titleLabel = UILabel(frame: CGRect(x:0, y:0, width:0, height:0))
+        
+        titleLabel.backgroundColor = UIColor.clear
+        titleLabel.textColor = UIColor.gray
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 27)
+        titleLabel.text = title
+        titleLabel.sizeToFit()
+        
+        let subtitleLabel = UILabel(frame: CGRect(x:0, y:20, width:0, height:0))
+        subtitleLabel.backgroundColor = UIColor.clear
+        subtitleLabel.textColor = UIColor.black
+        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+        subtitleLabel.text = subtitle
+        subtitleLabel.sizeToFit()
+        
+        let titleView = UIView(frame: CGRect(x:0, y:0, width:max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height:200))
+        titleView.addSubview(titleLabel)
+        titleView.addSubview(subtitleLabel)
+        
+        //            let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
+        //
+        //            if widthDiff > 0 {
+        //                var frame = titleLabel.frame
+        //                frame.origin.x = widthDiff / 2
+        //                titleLabel.frame = frame.integral
+        //            } else {
+        //                var frame = subtitleLabel.frame
+        //                frame.origin.x = abs(widthDiff) / 2
+        //                titleLabel.frame = frame.integral
+        //            }
+        
         titleView.backgroundColor = .yellow
         
-            return titleView
+        return titleView
     }
     
     // MARK: Back Button
     func backButton() -> UIBarButtonItem {
         let backButton = UIBarButtonItem(title: "Назад", style: .plain, target: nil, action: nil)
         
-        backButton.setTitleTextAttributes([
-            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.003921568627, green: 0, blue: 0.09019607843, alpha: 1),
-            NSAttributedString.Key.font: R.font.sfProDisplayBold(size: 14)
-        ], for: .normal)
+        //        backButton.setTitleTextAttributes([
+        //            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.003921568627, green: 0, blue: 0.09019607843, alpha: 1),
+        //            NSAttributedString.Key.font: R.font.sfProDisplayBold(size: 14)
+        //        ], for: .normal)
+        //
+        //        backButton.setTitleTextAttributes([
+        //            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.003921568627, green: 0, blue: 0.09019607843, alpha: 1),
+        //            NSAttributedString.Key.font: R.font.sfProDisplayBold(size: 14)
+        //        ], for: .selected)
         
-        backButton.setTitleTextAttributes([
-            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.003921568627, green: 0, blue: 0.09019607843, alpha: 1),
-            NSAttributedString.Key.font: R.font.sfProDisplayBold(size: 14)
-        ], for: .selected)
-    
         return backButton
     }
     
@@ -195,4 +219,12 @@ extension MainNavigation {
     @objc func showSortFilter() {
         debugPrint("Sort Filter")
     }
+}
+
+
+extension MainNavigation: UINavigationControllerDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        debugPrint(scrollView.contentOffset)
+    }
+    
 }

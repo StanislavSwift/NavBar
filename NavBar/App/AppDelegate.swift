@@ -17,7 +17,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        window?.backgroundColor = .clear
+//        window?.backgroundColor = .clear
         
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -27,7 +27,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let firstBar = MainNavigation()
-        firstBar.viewControllers = [mainVC]
+        let testVC = UIViewController()
+        testVC.view.backgroundColor = .lightGray
+        firstBar.viewControllers = [mainVC] // [testVC]
         firstBar.tabBarItem.title = "First"
         
         let secondBar = UIViewController()
@@ -45,24 +47,24 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: Back Button Item
         
-        /// Set Back Button
-        UINavigationBar.appearance().backIndicatorImage = R.image.navbarIconBack()
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = R.image.navbarIconBack()
-        /// Set Back Button title position
-        
-        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 4, vertical: 0), for:UIBarMetrics.default)
-        /// Set BG Color
-        UINavigationBar.appearance().barTintColor   = .white
-        UINavigationBar.appearance().isTranslucent  = false
-        /// Set tint colors
-        UINavigationBar.appearance().tintColor      = #colorLiteral(red: 0.003921568627, green: 0, blue: 0.09019607843, alpha: 1)
-        // navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
-        UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2901960784, green: 0.2901960784, blue: 0.2901960784, alpha: 1),
-            NSAttributedString.Key.font: R.font.sfProTextRegular(size: 16)
-        ]
-        
-        UINavigationBar.appearance().clipsToBounds = false
+//        /// Set Back Button
+//        UINavigationBar.appearance().backIndicatorImage = R.image.navbarIconBack()
+//        UINavigationBar.appearance().backIndicatorTransitionMaskImage = R.image.navbarIconBack()
+//        /// Set Back Button title position
+//
+//        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 4, vertical: 0), for:UIBarMetrics.default)
+//        /// Set BG Color
+//        UINavigationBar.appearance().barTintColor   = .white
+//        UINavigationBar.appearance().isTranslucent  = false
+//        /// Set tint colors
+//        UINavigationBar.appearance().tintColor      = #colorLiteral(red: 0.003921568627, green: 0, blue: 0.09019607843, alpha: 1)
+//        // navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
+//        UINavigationBar.appearance().titleTextAttributes = [
+//            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2901960784, green: 0.2901960784, blue: 0.2901960784, alpha: 1),
+//            NSAttributedString.Key.font: R.font.sfProTextRegular(size: 16)
+//        ]
+//
+//        UINavigationBar.appearance().clipsToBounds = false
         
         return true
     }
