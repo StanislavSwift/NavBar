@@ -28,5 +28,11 @@ final class SecondController: UIViewController {
         ], for: .normal)
         
         self.navigationItem.rightBarButtonItem = resetButton
+        
+        let testView = UIView()
+        testView.backgroundColor = .yellow
+        testView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50)
+        
+        self.navigationItem.titleView = testView
     }
 }
