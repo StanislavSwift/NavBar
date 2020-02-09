@@ -48,8 +48,8 @@ private extension NavBarType1 {
         Bundle.main.loadNibNamed(String(describing: NavBarType1.self), owner: self, options: nil)
         addSubview(self.contentView)
         self.contentView.frame = self.bounds
-        self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
+//        self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.translatesAutoresizingMaskIntoConstraints = false
         
     }
 }

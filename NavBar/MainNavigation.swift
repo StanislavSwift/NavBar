@@ -46,7 +46,7 @@ final class MainNavigation: UINavigationController {
     
     private let statusBarHeight = UIApplication.shared.statusBarFrame.height
     
-//    private lazy var testView = NavBarType1(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
+    private lazy var testView = NavBarType1()
     private var testViewHeight: CGFloat = 80
     
     override func viewDidLoad() {
@@ -57,19 +57,19 @@ final class MainNavigation: UINavigationController {
         
         // https://stackoverflow.com/questions/51327195/how-to-add-xib-subviews-with-dynamic-height-to-uiview
         
-        let vv = (Bundle.main.loadNibNamed("NavBarType1", owner: self, options: nil))?[0] as! NavBarType1;
+//        let vv = (Bundle.main.loadNibNamed("NavBarType1", owner: NavBarType1.self, options: nil))?[0] as! NavBarType1;
 
-        vv.translatesAutoresizingMaskIntoConstraints = false
+//        vv.translatesAutoresizingMaskIntoConstraints = false
 
 //        vv.aedlb.text = "dsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjds"
 
-        view.addSubview(vv)
+        view.addSubview(testView)
 
         NSLayoutConstraint.activate([
 
-            vv.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-            vv.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            vv.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            testView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            testView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            testView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
 
             ])
         
