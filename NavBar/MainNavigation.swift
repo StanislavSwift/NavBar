@@ -53,6 +53,7 @@ final class MainNavigation: UINavigationController {
         super.viewDidLoad()
         self.title = nil
         
+        
         //        self.navigationBar.addSubview(self.testView) //, belowSubview: self.navigationBar)
         
         // https://stackoverflow.com/questions/51327195/how-to-add-xib-subviews-with-dynamic-height-to-uiview
@@ -80,7 +81,9 @@ final class MainNavigation: UINavigationController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.navigationBar.frame.size.height = 0
+        let height: CGFloat = 0
+        let bounds = self.navigationBar.bounds
+        self.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: height)
         
     }
     
