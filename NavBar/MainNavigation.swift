@@ -54,11 +54,29 @@ final class MainNavigation: UINavigationController {
         self.title = nil
         
         self.navigationBar.addSubview(self.testView) //, belowSubview: self.navigationBar)
-
         
-        if let visibleController = self.viewControllers.last {
-            visibleController.additionalSafeAreaInsets.top = testViewHeight - UIApplication.shared.statusBarFrame.height
-        }
+        // https://stackoverflow.com/questions/51327195/how-to-add-xib-subviews-with-dynamic-height-to-uiview
+        
+        let vv = (Bundle.main.loadNibNamed("NavBarType1.xib", owner: self, options: nil))?[0] as! repairView;
+
+        vv.translatesAutoresizingMaskIntoConstraints = false
+
+        vv.aedlb.text = "dsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjds"
+
+        view.addSubview(vv)
+
+        NSLayoutConstraint.activate([
+
+            vv.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            vv.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            vv.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+
+            ])
+        
+        
+//        if let visibleController = self.viewControllers.last {
+//            visibleController.additionalSafeAreaInsets.top = testViewHeight - UIApplication.shared.statusBarFrame.height
+//        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -66,8 +84,8 @@ final class MainNavigation: UINavigationController {
         
         self.navigationBar.frame.size.height = 0
 
-        self.testView.test()
-        
+
+    
         
         
         
