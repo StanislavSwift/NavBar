@@ -85,16 +85,15 @@ final class MainNavigation: UINavigationController {
     }
     
     func scroll(_ yOffset: CGFloat) {
-                let magicalSafeAreaTop: CGFloat = 88
+        let magicalSafeAreaTop: CGFloat = 88
         //        debugPrint(yOffset)
-                let offset = yOffset + magicalSafeAreaTop
-                let alpha: CGFloat = 1 - ((yOffset+magicalSafeAreaTop) / magicalSafeAreaTop)
+//        let offset = yOffset + magicalSafeAreaTop
+//        let alpha: CGFloat = 1 - ((yOffset+magicalSafeAreaTop) / magicalSafeAreaTop)
         
-                //        [testView, testView1].forEach{$0.alpha = alpha}
+        //        [testView, testView1].forEach{$0.alpha = alpha}
         
-                self.testView.alpha = alpha
-        
-                self.testView.transform = .init(translationX: 0, y: min(0, -offset))
+//        self.testView.alpha = alpha
+        self.testView.transform = .init(translationX: 0, y: min(0, -yOffset))
     }
 }
 
