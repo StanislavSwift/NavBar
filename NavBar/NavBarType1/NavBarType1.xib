@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavBarType1" customModule="NavBar" customModuleProvider="target">
+            <connections>
+                <outlet property="backButtonView" destination="Iqq-Qj-83Q" id="KRF-AU-ug0"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="WLf-PP-kbA"/>
+                <outlet property="rightButtonsStack" destination="91h-aS-kp5" id="W2M-dK-mLw"/>
+                <outlet property="rightButtonsView" destination="Mox-3t-JJr" id="K1h-aB-KVQ"/>
+                <outlet property="subTitleLabel" destination="Nrc-WS-fDX" id="8sE-RH-UXa"/>
+                <outlet property="titleLabel" destination="gOq-Y1-N69" id="eGb-66-RCO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="86"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zBj-ih-ipO">
+                    <rect key="frame" x="0.0" y="0.0" width="387" height="86"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqq-Qj-83Q">
+                            <rect key="frame" x="0.0" y="0.0" width="20" height="26"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-Zh-pGf">
+                                    <rect key="frame" x="0.0" y="6" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="le8-Iy-PEb"/>
+                                        <constraint firstAttribute="width" secondItem="kxJ-Zh-pGf" secondAttribute="height" multiplier="1:1" id="oaD-uW-ICU"/>
+                                    </constraints>
+                                    <state key="normal" image="navbar-icon-back"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="kxJ-Zh-pGf" firstAttribute="leading" secondItem="Iqq-Qj-83Q" secondAttribute="leading" id="6Rz-gW-9ho"/>
+                                <constraint firstAttribute="bottom" secondItem="kxJ-Zh-pGf" secondAttribute="bottom" id="9XB-oD-Dqr"/>
+                                <constraint firstAttribute="trailing" secondItem="kxJ-Zh-pGf" secondAttribute="trailing" id="I0i-2D-UVg"/>
+                                <constraint firstItem="kxJ-Zh-pGf" firstAttribute="top" secondItem="Iqq-Qj-83Q" secondAttribute="top" constant="6" id="uEU-wr-BxC"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="2wM-vf-pDf">
+                            <rect key="frame" x="30" y="0.0" width="291" height="79.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOYOTA Land Cruiser Prado New" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOq-Y1-N69">
+                                    <rect key="frame" x="0.0" y="0.0" width="291" height="62.5"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="26"/>
+                                    <color key="textColor" red="0.0039215686274509803" green="0.0" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.4 6MT (96 л. с.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrc-WS-fDX">
+                                    <rect key="frame" x="0.0" y="62.5" width="291" height="17"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
+                                    <color key="textColor" red="0.73333333333333328" green="0.75686274509803919" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mox-3t-JJr">
+                            <rect key="frame" x="331" y="0.0" width="56" height="26"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="91h-aS-kp5">
+                                    <rect key="frame" x="0.0" y="6" width="56" height="20"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcx-wF-ARO">
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                            <color key="backgroundColor" red="0.090196078430000007" green="0.73333333329999995" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="xcx-wF-ARO" secondAttribute="height" multiplier="1:1" id="gv7-JF-UXi"/>
+                                                <constraint firstAttribute="width" constant="20" id="qxz-LF-oph"/>
+                                            </constraints>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6T-2e-aSB">
+                                            <rect key="frame" x="36" y="0.0" width="20" height="20"/>
+                                            <color key="backgroundColor" red="0.96862745100000003" green="0.078431372550000003" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="C7C-hX-CZG"/>
+                                                <constraint firstAttribute="width" secondItem="Z6T-2e-aSB" secondAttribute="height" multiplier="1:1" id="ifO-u0-ovj"/>
+                                            </constraints>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="91h-aS-kp5" firstAttribute="leading" secondItem="Mox-3t-JJr" secondAttribute="leading" id="3Gv-mV-44V"/>
+                                <constraint firstItem="91h-aS-kp5" firstAttribute="top" secondItem="Mox-3t-JJr" secondAttribute="top" constant="6" id="62y-cH-x09"/>
+                                <constraint firstAttribute="trailing" secondItem="91h-aS-kp5" secondAttribute="trailing" id="PQ9-Pk-Ctl"/>
+                                <constraint firstAttribute="bottom" secondItem="91h-aS-kp5" secondAttribute="bottom" id="htt-OA-csa"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zBj-ih-ipO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="96H-xF-mp6"/>
+                <constraint firstAttribute="bottom" secondItem="zBj-ih-ipO" secondAttribute="bottom" id="PAT-Xh-RKE"/>
+                <constraint firstAttribute="trailing" secondItem="zBj-ih-ipO" secondAttribute="trailing" id="iLt-Be-l4j"/>
+                <constraint firstItem="zBj-ih-ipO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vrC-Su-I8s"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-145.6521739130435" y="135.9375"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="navbar-icon-back" width="20" height="10"/>
+    </resources>
+</document>

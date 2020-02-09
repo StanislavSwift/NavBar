@@ -19,6 +19,8 @@
 		85FD585523E439FC003AF689 /* SFProDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 85FD585323E439FC003AF689 /* SFProDisplay-Bold.otf */; };
 		85FD585723E44227003AF689 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD585623E44227003AF689 /* SecondController.swift */; };
 		85FD585923E4466B003AF689 /* SFProText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 85FD585823E4466B003AF689 /* SFProText-Regular.otf */; };
+		A1C9478E23F0A838006C653B /* NavBarType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C9478D23F0A838006C653B /* NavBarType1.xib */; };
+		A1C9479023F0AF0D006C653B /* NavBarType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9478F23F0AF0D006C653B /* NavBarType1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		85FD585623E44227003AF689 /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 		85FD585823E4466B003AF689 /* SFProText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.otf"; sourceTree = "<group>"; };
 		8D21F1E26A24871AD1DA36EA /* Pods-NavBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavBar.release.xcconfig"; path = "Target Support Files/Pods-NavBar/Pods-NavBar.release.xcconfig"; sourceTree = "<group>"; };
+		A1C9478D23F0A838006C653B /* NavBarType1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavBarType1.xib; sourceTree = "<group>"; };
+		A1C9478F23F0AF0D006C653B /* NavBarType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarType1.swift; sourceTree = "<group>"; };
 		D5BB0B5FE8F715BB57C9AF4A /* Pods_NavBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NavBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46302B6F05D028CA73758A7 /* Pods-NavBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavBar.debug.xcconfig"; path = "Target Support Files/Pods-NavBar/Pods-NavBar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +83,7 @@
 				85F58FA123E411A700A4752D /* ViewController.swift */,
 				85F58FB123E4122A00A4752D /* MainNavigation.swift */,
 				85FD585623E44227003AF689 /* SecondController.swift */,
+				A1C9479123F0AF13006C653B /* NavBarType1 */,
 			);
 			path = NavBar;
 			sourceTree = "<group>";
@@ -103,6 +108,15 @@
 				85FD585223E439FC003AF689 /* SFProDisplay-Medium.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A1C9479123F0AF13006C653B /* NavBarType1 */ = {
+			isa = PBXGroup;
+			children = (
+				A1C9478D23F0A838006C653B /* NavBarType1.xib */,
+				A1C9478F23F0AF0D006C653B /* NavBarType1.swift */,
+			);
+			path = NavBarType1;
 			sourceTree = "<group>";
 		};
 		A9D36336423C01CD6046F888 /* Pods */ = {
@@ -183,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C9478E23F0A838006C653B /* NavBarType1.xib in Resources */,
 				85FD585423E439FC003AF689 /* SFProDisplay-Medium.otf in Resources */,
 				85F58FAA23E411AC00A4752D /* LaunchScreen.storyboard in Resources */,
 				85FD585523E439FC003AF689 /* SFProDisplay-Bold.otf in Resources */,
@@ -266,6 +281,7 @@
 				85F58F9E23E411A700A4752D /* AppDelegate.swift in Sources */,
 				85FD585023E43872003AF689 /* R.generated.swift in Sources */,
 				85FD585723E44227003AF689 /* SecondController.swift in Sources */,
+				A1C9479023F0AF0D006C653B /* NavBarType1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
