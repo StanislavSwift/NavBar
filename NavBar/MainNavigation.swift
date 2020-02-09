@@ -46,22 +46,22 @@ final class MainNavigation: UINavigationController {
     
     private let statusBarHeight = UIApplication.shared.statusBarFrame.height
     
-    private lazy var testView = NavBarType1(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
+//    private lazy var testView = NavBarType1(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
     private var testViewHeight: CGFloat = 80
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = nil
         
-        self.navigationBar.addSubview(self.testView) //, belowSubview: self.navigationBar)
+//        self.navigationBar.addSubview(self.testView) //, belowSubview: self.navigationBar)
         
         // https://stackoverflow.com/questions/51327195/how-to-add-xib-subviews-with-dynamic-height-to-uiview
         
-        let vv = (Bundle.main.loadNibNamed("NavBarType1.xib", owner: self, options: nil))?[0] as! repairView;
+        let vv = (Bundle.main.loadNibNamed("NavBarType1", owner: self, options: nil))?[0] as! NavBarType1;
 
         vv.translatesAutoresizingMaskIntoConstraints = false
 
-        vv.aedlb.text = "dsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjds"
+//        vv.aedlb.text = "dsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjds"
 
         view.addSubview(vv)
 
@@ -83,36 +83,20 @@ final class MainNavigation: UINavigationController {
         super.viewDidLayoutSubviews()
         
         self.navigationBar.frame.size.height = 0
-
-
-    
         
-        
-        
-        //        let newFrame = CGRect(x: self.view.frame.minX, y: self.view.frame.minY, width: self.view.frame.width, height: frame.height)
-        //        self.testView.frame = newFrame
-        
-    }
-    
-    func did() {
-        navigationBar.frame = .zero
-        let fixedWidth = self.view.frame.size.width
-        let newSize = self.testView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-//        debugPrint(newSize.height)
-        self.testView.frame.size = CGSize(width: fixedWidth, height: newSize.height)
     }
     
     func scroll(_ yOffset: CGFloat) {
-        let magicalSafeAreaTop: CGFloat = 88
-//        debugPrint(yOffset)
-        let offset = yOffset + magicalSafeAreaTop
-        let alpha: CGFloat = 1 - ((yOffset+magicalSafeAreaTop) / magicalSafeAreaTop)
-        
-        //        [testView, testView1].forEach{$0.alpha = alpha}
-        
-        self.testView.alpha = alpha
-        
-        self.testView.transform = .init(translationX: 0, y: min(0, -offset))
+//        let magicalSafeAreaTop: CGFloat = 88
+////        debugPrint(yOffset)
+//        let offset = yOffset + magicalSafeAreaTop
+//        let alpha: CGFloat = 1 - ((yOffset+magicalSafeAreaTop) / magicalSafeAreaTop)
+//
+//        //        [testView, testView1].forEach{$0.alpha = alpha}
+//
+//        self.testView.alpha = alpha
+//
+//        self.testView.transform = .init(translationX: 0, y: min(0, -offset))
     }
 }
 
