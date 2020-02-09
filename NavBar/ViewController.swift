@@ -13,7 +13,6 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        debugPrint(38299)
     }
     
     @IBAction func nextController(_ sender: UIButton) {

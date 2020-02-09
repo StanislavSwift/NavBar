@@ -46,21 +46,15 @@ final class MainNavigation: UINavigationController {
     
     private let statusBarHeight = UIApplication.shared.statusBarFrame.height
     
-    private lazy var testView = NavBarType1(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100))
+    private lazy var testView = NavBarType1(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
     private var testViewHeight: CGFloat = 80
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = nil
-        self.navigationBar.frame.size = .zero
+        
         self.navigationBar.addSubview(self.testView) //, belowSubview: self.navigationBar)
 
-        
-        
-        testView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        testView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        testView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        testView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier:1.0/3.0, constant: 0.0).isActive = true
         
         if let visibleController = self.viewControllers.last {
             visibleController.additionalSafeAreaInsets.top = testViewHeight - UIApplication.shared.statusBarFrame.height
@@ -70,16 +64,11 @@ final class MainNavigation: UINavigationController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.navigationBar.frame.size = .zero
+        self.navigationBar.frame.size.height = 0
 
-
+        self.testView.test()
         
-//        self.testView.leftAnchor.constraint(equalTo: self.navigationBar.leftAnchor).isActive = true
-//        self.testView.rightAnchor.constraint(equalTo: self.navigationBar.rightAnchor).isActive = true
-//        self.testView.topAnchor.constraint(equalTo: self.navigationBar.topAnchor).isActive = true
-//        self.testView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-//        testView.sizeThatFits(self.view.frame.size)
         
         
         //        let newFrame = CGRect(x: self.view.frame.minX, y: self.view.frame.minY, width: self.view.frame.width, height: frame.height)
@@ -91,14 +80,13 @@ final class MainNavigation: UINavigationController {
         navigationBar.frame = .zero
         let fixedWidth = self.view.frame.size.width
         let newSize = self.testView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        debugPrint(newSize.height)
-        debugPrint("tekiojmov")
+//        debugPrint(newSize.height)
         self.testView.frame.size = CGSize(width: fixedWidth, height: newSize.height)
     }
     
     func scroll(_ yOffset: CGFloat) {
         let magicalSafeAreaTop: CGFloat = 88
-        debugPrint(yOffset)
+//        debugPrint(yOffset)
         let offset = yOffset + magicalSafeAreaTop
         let alpha: CGFloat = 1 - ((yOffset+magicalSafeAreaTop) / magicalSafeAreaTop)
         

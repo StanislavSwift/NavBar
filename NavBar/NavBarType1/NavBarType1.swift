@@ -8,6 +8,15 @@
 
 import UIKit
 
+extension UILabel {
+    func sizeToFitHeight() {
+        let size: CGSize = self.sizeThatFits(CGSize.init(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
+        var frame:CGRect = self.frame
+        frame.size.height = size.height
+        self.frame = frame
+    }
+}
+
 final class NavBarType1: UIView {
     
     @IBOutlet private var contentView: UIView!
@@ -26,6 +35,11 @@ final class NavBarType1: UIView {
         super.init(coder: coder)
         self.commonInit()
     }
+    
+    func test() {
+        self.titleLabel.sizeToFitHeight()
+        debugPrint()
+    }
 }
 
 private extension NavBarType1 {
@@ -35,5 +49,7 @@ private extension NavBarType1 {
         addSubview(self.contentView)
         self.contentView.frame = self.bounds
         self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        
     }
 }
