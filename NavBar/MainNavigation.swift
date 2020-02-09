@@ -53,30 +53,28 @@ final class MainNavigation: UINavigationController {
         super.viewDidLoad()
         self.title = nil
         
-//        self.navigationBar.addSubview(self.testView) //, belowSubview: self.navigationBar)
+        //        self.navigationBar.addSubview(self.testView) //, belowSubview: self.navigationBar)
         
         // https://stackoverflow.com/questions/51327195/how-to-add-xib-subviews-with-dynamic-height-to-uiview
         
-//        let vv = (Bundle.main.loadNibNamed("NavBarType1", owner: NavBarType1.self, options: nil))?[0] as! NavBarType1;
-
-//        vv.translatesAutoresizingMaskIntoConstraints = false
-
-//        vv.aedlb.text = "dsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjds"
-
+        //        let vv = (Bundle.main.loadNibNamed("NavBarType1", owner: NavBarType1.self, options: nil))?[0] as! NavBarType1;
+        
+        //        vv.translatesAutoresizingMaskIntoConstraints = false
+        
+        //        vv.aedlb.text = "dsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsvvvvdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjdsdsjhdsjhdsjhsdhjdsjhesisbeudjbdsjbdsjds"
+        
         view.addSubview(testView)
-
+        
         NSLayoutConstraint.activate([
-
-            testView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            testView.topAnchor.constraint(equalTo: view.topAnchor, constant: statusBarHeight),
             testView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             testView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-
-            ])
+        ])
         
         
-//        if let visibleController = self.viewControllers.last {
-//            visibleController.additionalSafeAreaInsets.top = testViewHeight - UIApplication.shared.statusBarFrame.height
-//        }
+        //        if let visibleController = self.viewControllers.last {
+        //            visibleController.additionalSafeAreaInsets.top = testViewHeight - UIApplication.shared.statusBarFrame.height
+        //        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -87,16 +85,16 @@ final class MainNavigation: UINavigationController {
     }
     
     func scroll(_ yOffset: CGFloat) {
-//        let magicalSafeAreaTop: CGFloat = 88
-////        debugPrint(yOffset)
-//        let offset = yOffset + magicalSafeAreaTop
-//        let alpha: CGFloat = 1 - ((yOffset+magicalSafeAreaTop) / magicalSafeAreaTop)
-//
-//        //        [testView, testView1].forEach{$0.alpha = alpha}
-//
-//        self.testView.alpha = alpha
-//
-//        self.testView.transform = .init(translationX: 0, y: min(0, -offset))
+                let magicalSafeAreaTop: CGFloat = 88
+        //        debugPrint(yOffset)
+                let offset = yOffset + magicalSafeAreaTop
+                let alpha: CGFloat = 1 - ((yOffset+magicalSafeAreaTop) / magicalSafeAreaTop)
+        
+                //        [testView, testView1].forEach{$0.alpha = alpha}
+        
+                self.testView.alpha = alpha
+        
+                self.testView.transform = .init(translationX: 0, y: min(0, -offset))
     }
 }
 
